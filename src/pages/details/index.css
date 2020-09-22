@@ -1,0 +1,12 @@
+#container-details-character {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+#container-details-character .image-character{
+    width: 35%;
+}
+#container-details-character .image-character img{
+    max-width: 100%;
+}

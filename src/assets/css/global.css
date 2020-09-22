@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 60%;
+}
+
+:root {
+    --color-bg-dark: #15161A;
+    --color-bg-light: #202125;
+    --color-text-light: #5B5D68;
+    --color-red: #CB3F3F;
+    --color-red-dark: #B52525;
+    --color-text-white: #fff;
+    --font-family-big-sholders-text: 'Big Shoulders Text', cursive;
+}
+
+html,
+body,
+#root {
+    background: var(--color-bg-dark);
+    min-height: 100vh;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+input,
+button,
+select,
+textarea {
+    font-family: var(--font-family-big-sholders-text);
+}

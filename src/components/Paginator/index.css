@@ -1,0 +1,36 @@
+
+/*PAGINATOR*/
+#container-paginator {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-paginator .content-paginator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:15rem 0 5rem 0;
+}
+#container-paginator .content-paginator button{
+    background: var(--color-bg-light);
+    font-size: 2.5rem;
+    color:var(--color-red);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    margin:1rem;
+    transition: 0.3s ease-in-out;
+}
+
+#container-paginator .content-paginator button:hover{
+    background:var(--color-red);
+    color:var(--color-bg-light);
+}
