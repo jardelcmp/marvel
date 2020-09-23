@@ -2,11 +2,107 @@
     width: 100%;
     height: auto;
     display: flex;
+    padding:5rem;
+    margin-top: 15rem;
 }
 
 #container-details-character .image-character{
-    width: 35%;
+    width: 40%;
 }
 #container-details-character .image-character img{
     max-width: 100%;
+}
+#container-details-character .details{
+    width: 60%;
+}
+#container-details-character .details .title{
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+#container-details-character .details .title h1{
+    font-size: 4.8rem;
+    color: var(--color-red);
+}
+#container-details-character .details .description{
+    background: var(--color-bg-darked);
+    border-radius: 0.4rem;
+     padding: 2rem;
+}
+#container-details-character .details .description p{
+    font-size: 2rem;
+    color: white;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+#container-events{
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+}
+
+#container-events .title{
+    margin: 2rem 0;
+}
+#container-events .title h1{
+    font-size: 4.8rem;
+    color: var(--color-red);
+}
+
+#container-events .box-events{
+    background: var(--color-bg-darked);
+    width: 100%;
+    height: auto;
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: auto;
+}
+
+/*ITEM EVENTS*/
+#container-events .box-events .event {
+    background: var(--color-bg-light);
+    height: 30rem;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.4rem;
+    margin: 1rem 1rem;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+#container-events .box-events .event img {
+    max-height: 20rem;
+}
+
+#container-events .box-events .event .event-link {
+    background: var(--color-bg-button);
+    width: 100%;
+    height: 4.5rem;
+    border: 0;
+    border-radius: 0.4rem;
+    color: var(--color-red);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container-events .box-events .event .event-link:hover {
+    background: var(--color-red);
+    color: var(--color-bg-button);
+}
+/*ITEM EVENTS*/
+
+
+@media(max-width:767px){
+    #container-characters{
+        margin-top: 23rem;
+    }
 }

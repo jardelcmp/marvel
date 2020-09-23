@@ -9,12 +9,14 @@
 
 :root {
     --color-bg-dark: #15161A;
+    --color-bg-button: #292a2d;
     --color-bg-light: #202125;
     --color-text-light: #5B5D68;
     --color-red: #CB3F3F;
     --color-red-dark: #B52525;
     --color-text-white: #fff;
     --font-family-big-sholders-text: 'Big Shoulders Text', cursive;
+    --color-bg-darked:#111217;
 }
 
 html,
@@ -39,3 +41,19 @@ select,
 textarea {
     font-family: var(--font-family-big-sholders-text);
 }
+
+::-webkit-scrollbar {
+    width:10px;
+    height: 10px;
+    }
+     
+    /* aqui é para personalizar o fundo da barra, neste caso estou colocando um fundo cinza escuro*/
+    ::-webkit-scrollbar-track {
+    background:var(--color-bg-light);
+    }
+     
+    /* aqui é a alça da barra, que demonstra a altura que você está na página
+    estou colocando uma cor azul clara nela*/
+    ::-webkit-scrollbar-thumb {
+    background: var(--color-red);
+    }

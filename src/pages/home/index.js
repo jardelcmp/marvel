@@ -5,6 +5,7 @@ import './index.css'
 
 import {AiOutlineSearch} from 'react-icons/ai'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 import Paginator from '../../components/Paginator'
 import ItemCharacters from '../../components/ItemCharacters'
 
@@ -33,7 +34,7 @@ function Home (){
          </div>
       </section>
       <Paginator />
-
+      <Footer />
     </>
     )
 }

@@ -7,7 +7,7 @@ const Home = ({children}) => {
         <header id="container-header">
             <div className="content-header">
                 <div className="logo">
-                    <a href="#">
+                    <a href="/">
                         <img src={logo} />
                     </a>            
                 </div>

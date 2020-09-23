@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 0.8rem;
+    border-radius: 0.4rem;
     margin: 2rem 1rem;
     justify-content: space-between;
     padding: 1rem;
@@ -16,12 +16,12 @@
 }
 
 #container-characters .content-characters .character .character-link {
-    background: var(--color-red);
+    background: var(--color-bg-button);
     width: 100%;
     height: 4.5rem;
     border: 0;
     border-radius: 0.4rem;
-    color: var(--color-bg-light);
+    color: var(--color-red);
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
@@ -32,5 +32,13 @@
 }
 
 #container-characters .content-characters .character .character-link:hover {
-    background: var(--color-red-dark);
+    background: var(--color-red);
+    color: var(--color-bg-button);
+}
+
+@media(max-width:767px){
+    #container-characters .content-characters .character{
+        width: 48%;
+        margin: 1rem 0rem;
+    }
 }
