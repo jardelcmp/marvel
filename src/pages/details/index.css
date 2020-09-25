@@ -2,18 +2,21 @@
     width: 100%;
     height: auto;
     display: flex;
-    padding:5rem;
+    padding: 5rem;
     margin-top: 10rem;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 #container-details-character .image-character{
-    width: 40%;
+    width: 38%;
 }
 #container-details-character .image-character img{
     max-width: 100%;
+    border-radius: 0.4rem;
 }
 #container-details-character .details{
-    width: 60%;
+    width: 58%;
 }
 #container-details-character .details .title{
     margin-bottom: 2rem;

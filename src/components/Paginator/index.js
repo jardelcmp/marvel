@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {AiOutlineDoubleLeft, AiOutlineDoubleRight, AiOutlineLeft, AiOutlineRight} from 'react-icons/ai'
 
 import './index.css'
-function Paginator(){
+const  Paginator = (props) => {
+    
     return (
         <section id="container-paginator">
             <div class="content-paginator">

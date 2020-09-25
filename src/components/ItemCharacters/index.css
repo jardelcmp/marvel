@@ -13,6 +13,7 @@
 
 #container-characters .content-characters .character img {
     max-height: 20rem;
+    border-radius: 0.4rem;
 }
 
 #container-characters .content-characters .character .character-link {
