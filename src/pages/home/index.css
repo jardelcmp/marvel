@@ -2,6 +2,7 @@
 #container-characters {
     width: 100%;
     height: 100%;
+    margin-top: 15rem;
     
 }
 
@@ -27,8 +28,3 @@
     flex-wrap: wrap;
 }
 
-@media(max-width:767px){
-    #container-characters{
-        margin-top: 23rem;
-    }
-}

@@ -43,8 +43,8 @@ textarea {
 }
 
 ::-webkit-scrollbar {
-    width:10px;
-    height: 10px;
+    width:0.7rem;
+    height: 0.7rem;
     }
      
     /* aqui é para personalizar o fundo da barra, neste caso estou colocando um fundo cinza escuro*/
@@ -55,5 +55,5 @@ textarea {
     /* aqui é a alça da barra, que demonstra a altura que você está na página
     estou colocando uma cor azul clara nela*/
     ::-webkit-scrollbar-thumb {
-    background: var(--color-red);
+    background: var(--color-text-light);
     }

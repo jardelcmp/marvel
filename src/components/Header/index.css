@@ -1,6 +1,6 @@
 /*HEADER*/
 #container-header {
-    height: 10rem;
+    min-height: 10rem;
     width: 100%;
     padding: 2.4rem;
     border-bottom: 1px solid var(--color-bg-button);
@@ -51,19 +51,21 @@
 @media(max-width:767px){
     #container-header{
         border-bottom: 0;
-        height: 18rem;
+        min-height: 6rem;
         padding: 0.5rem;
     }
 
     #container-header .content-header{
-        height: 15rem;
+        height: auto;
         align-items: flex-start;
-        justify-content: space-between;
+        justify-content: center;
         flex-direction: column;
     }
 
-    #container-header .content-header .search{
+    #container-header .content-header .search {
         width: 100%;
+        margin-top: 1.5rem;
+        
     }
     #container-header .content-header .search input{
         width: 100%;
