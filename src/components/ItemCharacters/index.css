@@ -48,8 +48,14 @@
 
 
 @media(max-width:767px){
+    #container-characters .content-characters {
+        width: 100%;
+    }
     #container-characters .content-characters .character{
-        width: 48%;
+        width: 100%;
         margin: 1rem 0rem;
+    }
+    #container-characters .content-characters .character-link {
+       width: 48%;
     }
 }
