@@ -35,8 +35,14 @@
     color: var(--color-bg-button);
 }
 
-@media(max-width:1100px){
+@media(min-width: 767px ) and (max-width:1100px){
     #container-events .box-events .event{
         width: 50%;
+    }
+}
+
+@media(max-width: 767px){
+    #container-events .box-events .event{
+        width: 100%;
     }
 }

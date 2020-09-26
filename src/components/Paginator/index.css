@@ -50,3 +50,14 @@
     cursor: pointer;
     margin:1rem;
 }
+
+@media(max-width: 767px){
+    
+    #container-paginator .content-paginator button,
+    #container-paginator .content-paginator .page_active{
+        margin: 0.3rem;
+        font-size: 1.8rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

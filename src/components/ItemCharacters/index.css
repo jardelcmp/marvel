@@ -57,5 +57,7 @@
     }
     #container-characters .content-characters .character-link {
        width: 48%;
+       margin: 1rem  0rem;
     }
+
 }
