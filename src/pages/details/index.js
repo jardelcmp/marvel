@@ -1,20 +1,24 @@
-import React,{useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.css'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import { Link } from 'react-router-dom'
 import apiMarvel from '../../config/apiMarvel'
-import imgHulk from '../../assets/images/hulk.png'
 import api from '../../services/api'
+import Midia from '../../components/Midia'
 const Details = (props) => {
     const id = props.match.params.id
     const [character, setCharacter] = useState({
-        name: '',thumbnail:'',description:''
+        name: '', thumbnail: '', description: ''
     })
-    async function handleFindCharacterById(id){
-        const {ts, apikey, hash} = apiMarvel
-        const response = await api.get(`characters/${id}`,{
-            params:{
+
+    const [comics, setComics] = useState([])
+    const [events, setEvents] = useState([])
+    const [series, setSeries] = useState([])
+
+    async function handleFindCharacterById() {
+        const { ts, apikey, hash } = apiMarvel
+        const response = await api.get(`characters/${id}`, {
+            params: {
                 ts,
                 apikey,
                 hash
@@ -25,13 +29,49 @@ const Details = (props) => {
             thumbnail: `${response.data.data.results[0].thumbnail.path}.${response.data.data.results[0].thumbnail.extension}`,
             description: response.data.data.results[0].description,
         })
-        console.log(character)
     }
-    const data = [1, 2, 3, 4, 5,6]
+
+    async function handleListComics() {
+        const { ts, apikey, hash } = apiMarvel
+        const response = await api.get(`characters/${id}/comics`, {
+            params: {
+                ts,
+                apikey,
+                hash,
+            }
+        })
+        setComics(response.data.data.results)
+    }
+
+    async function handleListEvents() {
+        const { ts, apikey, hash } = apiMarvel
+        const response = await api.get(`characters/${id}/events`, {
+            params: {
+                ts,
+                apikey,
+                hash,
+            }
+        })
+        setEvents(response.data.data.results)
+    }
+    async function handleListSeries() {
+        const { ts, apikey, hash } = apiMarvel
+        const response = await api.get(`characters/${id}/series`, {
+            params: {
+                ts,
+                apikey,
+                hash,
+            }
+        })
+        setSeries(response.data.data.results)
+    }
     useEffect(() => {
-        handleFindCharacterById(id)
-    },[])
-    
+        handleFindCharacterById()
+        handleListComics()
+        handleListEvents()
+        handleListSeries()
+    }, [])
+
     return (
         <>
             <Header />
@@ -53,12 +93,9 @@ const Details = (props) => {
                     <h1>Comics</h1>
                 </div>
                 <div className="box-events">
-                    {data.map(item => {
+                    {comics.length <= 0 ? <h1>No comics</h1> : comics.map((comic, index) => {
                         return (
-                            <div className="event" key={item}>
-                                <img src={imgHulk} />
-                                <Link to="/details/1" className="event-link">Hulk</Link>
-                            </div>
+                            <Midia key={index} midia={comic} />
                         )
                     })}
                 </div>
@@ -68,12 +105,9 @@ const Details = (props) => {
                     <h1>Events</h1>
                 </div>
                 <div className="box-events">
-                    {data.map(item => {
+                    {events.length <= 0 ? <h1>No Events</h1> : events.map((event, index) => {
                         return (
-                            <div className="event" key={item}>
-                                <img src={imgHulk} />
-                                <Link to="/details/1" className="event-link">Hulk</Link>
-                            </div>
+                            <Midia key={index} midia={event} />
                         )
                     })}
                 </div>
@@ -83,32 +117,14 @@ const Details = (props) => {
                     <h1>Séries</h1>
                 </div>
                 <div className="box-events">
-                    {data.map(item => {
+                    {series.length <= 0 ? <h1>No Series</h1> : series.map((serie, index) => {
                         return (
-                            <div className="event" key={item}>
-                                <img src={imgHulk} />
-                                <Link to="/details/1" className="event-link">Hulk</Link>
-                            </div>
+                            <Midia key={index} midia={serie} />
                         )
                     })}
                 </div>
             </section>
-            <section id="container-events">
-                <div className="title">
-                    <h1>Stories</h1>
-                </div>
-                <div className="box-events">
-                    {data.map(item => {
-                        return (
-                            <div className="event" key={item}>
-                                <img src={imgHulk} />
-                                <Link to="/details/1" className="event-link">Hulk</Link>
-                            </div>
-                        )
-                    })}
-                </div>
-            </section>
-           <Footer />
+            <Footer />
         </>
     )
 }

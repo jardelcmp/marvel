@@ -5,10 +5,12 @@ import './index.css'
 
 const ItemCharacters = ({character}) => {
  return (
-    <div className="character">
-        <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
-        <Link to={`/details/${character.id}`} className="character-link">{character.name}</Link>
-    </div>
+    <Link to={`/details/${character.id}`} className="character-link">
+        <div className="character">
+            <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} />
+            <p>{character.name}</p>
+        </div>
+    </Link>
  )
 }
 

@@ -15,8 +15,8 @@ function Home (){
     const [pages, setPages] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [totalPages, setTotalPages] = useState(0)
-    const [limit, setLimit] = useState(16)
-    const [offset, setOffset] = useState(0)
+    const [limit, setLimit] = useState(8)
+    const [search, setSearch] = useState('')
     
     useEffect(() => {
       async function handleListCharacters(){
@@ -27,12 +27,13 @@ function Home (){
             apikey,
             hash,
             limit,
-            offset: (currentPage * limit) - limit
+            offset: (currentPage * limit) - limit,
+            nameStartsWith: search ? search : '%%'
           }
         })
         setTotalPages(Math.ceil(response.data.data.total / limit))
         
-        const limitPagination = 5;
+        const limitPagination = 3;
         const limitLateral = Math.ceil(limitPagination / 2);
         const start = currentPage - limitLateral 
         //start = start <= 0 ? 1 : start
@@ -46,13 +47,13 @@ function Home (){
         setListCharacters(response.data.data.results)
     }
       handleListCharacters()
-    },[currentPage])
+    },[currentPage, search])
 
     return (
         <>
         <Header>
           <div className="search">
-                <input type="text" placeholder="Search"/>    
+                <input type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)}/>    
                 <AiOutlineSearch size={24} className="icon_search"/>      
             </div>
         </Header>
@@ -77,10 +78,10 @@ function Home (){
                   <>
                     {
                       currentPage > 2 &&(
-                        <button type="button"><AiOutlineDoubleLeft /></button>
+                        <button type="button" onClick={()=>{setCurrentPage(1)}}><AiOutlineDoubleLeft /></button>
                       )
                     }
-                    <button type="button"><AiOutlineLeft /></button>
+                    <button type="button" onClick={()=>{setCurrentPage(currentPage - 1)}}><AiOutlineLeft /></button>
                   </>
                 )}
 
@@ -101,10 +102,10 @@ function Home (){
                 {
                   currentPage < totalPages && (
                     <>
-                      <button type="button" ><AiOutlineRight /></button>
+                      <button type="button" onClick={()=>{setCurrentPage(currentPage + 1)}}><AiOutlineRight /></button>
                       {
                         totalPages > 3 && (
-                          <button type="button" ><AiOutlineDoubleRight /></button>
+                          <button type="button" onClick={()=>{setCurrentPage(totalPages)}}><AiOutlineDoubleRight /></button>
                         )
                       }
                     </>
@@ -113,8 +114,6 @@ function Home (){
 
                 </div>
             </section>
-
-
           )}
 
           
